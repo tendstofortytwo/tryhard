@@ -8,8 +8,6 @@ function die(err) {
 	process.exit(1);
 }
 
-const BELL = '\u0007';
-
 const pusher = new PushBullet(auth.token);
 
 if(process.argv.length !== 4) {
@@ -23,14 +21,7 @@ const interval = 5000;
 let originalValue = null;
 
 async function push(title, body) {
-	const notification = JSON.stringify({
-		type: 'note',
-		title,
-		body
-	});
-
 	const me = await pusher.me();
-
 	return pusher.note(me.email, title, body);
 }
 
