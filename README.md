@@ -4,7 +4,13 @@ fetches a page and monitors it for changes. when a change is detected, sends a p
 
 ## usage
 
-Write `auth.pii.js` as:
+install dependencies:
+
+```
+$ npm i
+```
+
+write `auth.pii.js` as:
 
 ```
 module.exports = {
@@ -12,7 +18,7 @@ module.exports = {
 };
 ```
 
-Use the script as:
+use the script as:
 
 ```
 $ node tryhard.mjs https://url.to/monitor '.elementSelectorToMonitor:nth-of-type(3)'
